@@ -1,0 +1,2 @@
+1. start apache tomcat
+2. http://localhost:8081/DemandSupply/

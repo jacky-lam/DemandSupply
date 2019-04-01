@@ -1,0 +1,122 @@
+/*
+ * Author:	Yun Fat Lam
+ * Purpose:	Styling specifically for the table
+ * Comment: 
+ * 
+ * */
+.demand_supply_wrapper
+{
+	position: relative;
+	margin-top: 5px;
+}
+.demand_supply_table
+{
+	table-layout: fixed;
+	width: 100px;
+	border: 0px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.table_header
+{
+	font-weight: normal;
+	background-color: #5f5f5f;
+	text-align: left;
+	color: #ffffff;
+	font-size: 14px;
+	box-sizing: border-box;
+	height: 50px;
+	overflow: hidden;
+}
+.table_header_first { border-radius: 3px 0px 0px 3px;}
+.table_header_last { border-radius: 0px 3px 3px 0px;}
+
+.table_cell
+{
+	color: #606060;
+	position: relative;
+}
+
+.label_header {	width: 200px; padding-left: 10px; }
+.date_header{ width: 50px; font-size: 10px; text-align: center;}
+
+.date_cell
+{
+	width: 50px;
+	height: 50px;
+	max-width: 50px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.label_input, .number_input
+{
+	display: inline-block;
+	vertical-align: middle;
+	
+	height: 40px;
+	background-color: #efefef;
+	color: #606060;
+	
+	border: 0px;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+.number_input
+{
+	width: 40px;
+	text-align: center;
+}
+.label_input
+{
+	width: 153px;
+	text-align: left;
+	padding-left: 10px;
+	margin-left: 40px;
+}
+.label_input.supply
+{
+	margin-left: 60px;
+    width: 133px;
+}
+.demand
+{
+	background-color: #d0dfe1;
+    color: #555555;
+}
+.supply
+{
+	color: #555555;
+    background-color: #4dd9b3;
+}
+
+.table_delete_row_button, .add_supply_button
+{
+	display: block;
+    position: absolute;
+    
+    top: 18px;
+    height: 15px;
+    width: 15px;
+    
+    cursor: pointer;
+    border-radius: 3px;
+}
+.table_delete_row_button:before, .add_supply_button:before
+{
+	
+    font-size: 13px;
+    line-height: 12px;
+    margin-left: 4px;
+    color: #efefef;
+}
+
+.table_delete_row_button { background-color: #cf4d3f; left: 2px; }
+.table_delete_row_button.supply{ left: 41px;}
+.table_delete_row_button:hover { background-color:#e35445;}
+.table_delete_row_button:before{content: "x";}
+
+.add_supply_button { left: 21px; background-color: #4dd9b3; }
+.add_supply_button:hover{background-color:#53ebc2;}
+.add_supply_button:before{content: "↳";}
+

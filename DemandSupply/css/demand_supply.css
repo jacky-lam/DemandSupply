@@ -1,0 +1,233 @@
+/*
+ * Author:	Yun Fat Lam
+ * Purpose:	Styling the demand-supply webapp.
+ * Comment: 
+ * 
+ * */
+
+/* General */
+body, html
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica', Arial, Sans-serif;
+	color: #555555;
+	font-size: 12px;
+	background-color: #ffefff;
+}
+input:focus, select:focus, option:focus
+{
+	outline: 0;
+}
+
+input[type=number]{-moz-appearance:textfield; }
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0; }
+
+.page_container
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	padding-top: 50px;
+	z-index: 1;
+	position: absolute;
+	margin-top: -100%;
+	transition: margin-top 0.5s ease 0s;
+}
+.page_container.show{margin-top: 0%;}
+.page_container.hide{margin-top: -100%;}
+
+/* header bar */
+.page_header
+{
+	position: fixed;
+	background-color: #222a39;
+	width: 100%;
+	height: 50px;
+	box-sizing: border-box;
+	z-index: 10;
+	overflow: hidden;
+}
+.page_header div
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header_selection_wrapper, .header_project_wrapper
+{
+	position: absolute;
+	left: 10px;
+	width: calc(100% - 20px);
+	height: 100%;
+	
+	transition: top 0.5s ease 0s;
+}
+.header_selection_wrapper.show{top: 0%;}
+.header_selection_wrapper.hide{top: -100%;}
+.header_project_wrapper.show{ top: 0%;}
+.header_project_wrapper.hide{ top: -100%;}
+
+.header_title, .project_title, .project_date
+{
+	font-size: 14px;
+	color: #ffffff;
+	margin-right: 6px;
+	height: 50px;
+	line-height: 50px;
+}
+.project_title{font-size: 16px;}
+.project_date{font-size: 11px; font-style: italic;}
+
+.page_dropdown_wrapper
+{
+	position: relative;
+	display: inline-block;
+	font-size: 16px;
+	border: 0px;
+	color: #606060;
+	border-radius: 3px;
+	height: 30px;
+	width: 180px;
+}
+.page_dropdown_wrapper:after
+{
+	background-image: url("../img/down_arrow.svg");
+	background-repeat: no-repeat;
+	background-color: #ffefff;
+	background-size: 16px 16px;
+	content: " ";
+	position: absolute;
+	background-position: center;
+	pointer-events: none;
+	
+	right: 8px;
+	top: 7px;
+	height: 16px;
+	width: 16px;
+}
+.page_dropdown_wrapper select
+{
+	color: #555555;
+	background-color: #ffefff;
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	padding-left: 5px;
+	box-sizing: border-box;
+	font-size: 12px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.page_dropdown_wrapper select::-ms-expand { display: none; }
+.page_dropdown_wrapper select {-webkit-appearance: none; -moz-appearance: none;}
+.page_dropdown_wrapper option
+{
+	background-color: #ffefff;
+}
+.page_dropdown_wrapper option:hover, .page_dropdown_wrapper option:active{ background-color: #ef7504;}
+
+
+/* UI Buttons */
+.load_button, .close_button, .add_demand_button, .export_excel_button
+{
+	font-family: 'Helvetica', Arial, Sans-serif;
+	font-size: 12px;
+	cursor: pointer;
+	text-align: center;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 3px;
+	box-sizing: border-box;
+	    
+	transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+	
+	height: 30px;
+	line-height: 30px;
+}
+.load_button, .close_button
+{
+	position: absolute;
+	right: 0px;
+	top: 10px;
+}
+.load_button, .load_button_active
+{
+	display: none;
+	background-color: #b24236;
+	border-color: #b24236;
+	color: #ffffff;
+	width: 60px;
+}
+.load_button_active {display: inline-block;}
+.load_button_active:hover{ background-color: #cf4d3f; }
+.close_button
+{
+	display: none;
+	width: 60px;
+	background-color: #b24236;
+	border-color: #b24236;
+	color: #ffffff;
+}
+.close_button:hover{background-color: #cf4d3f; }
+
+.add_demand_button_wrapper
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 5px;
+	margin-left: 41px;
+	cursor:pointer;
+}
+.add_demand_button
+{
+	display: inline-block;
+	width: 30px;
+	background-color: #d0dfe1;
+	border-color: #d0dfe1;
+	color: #555555;
+	font-size: 35px;
+}
+.add_demand_button_wrapper:hover .add_demand_button, .add_demand_button:hover{background-color: #c2d0e5; }
+.add_demand_text
+{
+	line-height: 32px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.export_excel_button
+{
+	width: 100px;
+	background-color: #119200;
+	border-color: #119200;
+	color: #ffffff;
+	position: absolute;
+	
+	right: 70px;
+	top: 10px;
+}
+.export_excel_button:hover{background-color: #14ab00; }
+
+
+/* Out date IE */
+.outdate_ie_wrapper
+{
+	height: 100%;
+	width: 100%;
+	background: #23b4a6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:999;
+}
+.outdate_ie_container
+{
+	top: 150px;
+	width: 350px;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	color :#ffffff;
+}

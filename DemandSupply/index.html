@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Demand Supply Dynamic Chart</title>
+	
+	<link href="css/demand_supply.css" rel="stylesheet" type="text/css">
+	<link href="css/table.css" rel="stylesheet" type="text/css">
+	<link href="css/chart.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/ui.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/demand_supply.js"></script>
+	<script type="text/javascript" src="js/chart.js"></script>
+	<script type="text/javascript" src="js/table.js"></script>
+	<script type="text/javascript" src="js/export.js"></script>
+	
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">google.load("visualization", "1", {packages:["corechart"]});</script>
+</head>
+<body onload="initialise()">
+	<!--[if lt IE 10]>
+		<div class="outdate_ie_wrapper">
+			<div class="outdate_ie_container">
+				<h1>Sorry...</h1>
+				<p>This browser version is currently not supported, please upgrade or use an alternative browser.</p>
+			</div>
+		</div>
+	<![endif]-->
+	<div class="page_header">
+		<div id="header_selection_wrapper" class="header_selection_wrapper show">
+			<div class="header_title">Select your project: </div>
+			<div class="page_dropdown_wrapper"><select id="project_list"><option>Loading...</option></select></div>
+			<div id="load_button" class="load_button" onclick="loadProject()">Load</div>
+		</div>
+		<div id="header_project_wrapper" class="header_project_wrapper hide">
+			<div id="project_title" class="project_title"></div>
+			<div class="project_date">(<span id="project_start_date"></span> - <span id="project_end_date"></span>)</div>
+			<div class="export_excel_button" onclick="tablesToExcel([document.getElementById('demand_supply_table')], ['Demand Supply'], 'Demand_Supply.xls', 'Excel')">Export to Excel</div>
+			<div onclick="changePage('login')" class="close_button">Close</div>
+		</div>
+	</div>
+	<div id="page_container" class="page_container">
+		<div id="demand_supply_wrapper" class="demand_supply_wrapper">
+			<div class="key_chart_wrapper">
+				<div class="key_chart_row">
+					<div id="key_chart_symbol_demand" class="key_chart_symbol demand"></div>
+					<div class="key_chart_label">Demand</div>
+				</div>
+				<div class="key_chart_row">
+					<div id="key_chart_symbol_supply" class="key_chart_symbol supply"></div>
+					<div class="key_chart_label">Supply</div>
+				</div>
+			</div>
+			<div class="chart_table_wrapper">
+				<div class="chart_wrapper">
+					<div id="chart_container" class="chart_container"></div>
+				</div>
+				<table id="demand_supply_table" class="demand_supply_table"></table>
+			</div>
+			<div class="add_demand_button_wrapper" onclick="insertRecord()"><div class="add_demand_button">+</div><span class="add_demand_text">Add demand</span></div>
+		</div>
+	</div>
+</body>
+</html>
